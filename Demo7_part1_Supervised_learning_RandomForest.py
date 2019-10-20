@@ -78,8 +78,11 @@ X_train[:,0].size
 
 varriableNames= breastCancer.feature_names
   
-# feature extraction
-  
+#Feature extraction
+#Recursive feature elimination (RFE) is a feature selection method that fits a model 
+#and removes the weakest feature (or features) until the specified number of features is reached. 
+#Features are ranked by the model’s coef_ or feature_importances_
+
 randomForestModel = RandomForestClassifier(n_estimators=100, max_depth=2, random_state=0)
 rfe = RFE(randomForestModel, 3)
 fit = rfe.fit(X, y)
